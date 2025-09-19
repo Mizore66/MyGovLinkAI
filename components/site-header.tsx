@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
-import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react";
+import { Menu, Briefcase, Tag } from "lucide-react";
 
 export function SiteHeader() {
   const links = [
@@ -45,7 +45,9 @@ export function SiteHeader() {
                          hover:bg-cyan-300 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <Link href="#contact">Try Now</Link>
+              <a href="https://wa.me/601172470181" target="_blank" rel="noopener noreferrer">
+                Try Now
+              </a>
             </Button>
           </div>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 export function Hero() {
   const buttonNew = (
     <Button asChild className="rounded-full bg-cyan-400 px-6 text-black hover:bg-cyan-300">
-      <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/601172470181" target="_blank" rel="noopener noreferrer">
         Try Now
       </a>
     </Button>
