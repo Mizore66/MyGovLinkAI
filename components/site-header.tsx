@@ -1,19 +1,16 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Image from "next/image"
-import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
+import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react";
 
 export function SiteHeader() {
   const links = [
     { href: "/", label: "Home", icon: Briefcase },
-    { href: "#pricing", label: "Pricing", icon: Tag },
-    { href: "faq", label: "FAQ", icon: HelpCircle },
-    { href: "#blog", label: "Blog", icon: FileText },
-    { href: "About", label: "About", icon: Info },
-  ]
+    { href: "#features", label: "Features", icon: Tag },
+  ];
 
   return (
     <header className="sticky top-0 z-50 p-4">
@@ -22,23 +19,19 @@ export function SiteHeader() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-1.5">
             <Image
-              src="/icons/skitbit-white.svg"
-              alt="Skitbit logo"
+              src="/icons/govlink-logo.png"
+              alt="GovLink logo"
               width={20}
               height={20}
               className="h-5 w-5"
             />
-            <span className="font-semibold tracking-wide text-white">Skitbit</span>
+            <span className="font-semibold tracking-wide text-white">GovLink</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="hover:text-purple-300 transition-colors"
-              >
+              <Link key={l.href} href={l.href} className="hover:text-purple-300 transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -48,11 +41,11 @@ export function SiteHeader() {
           <div className="hidden md:flex">
             <Button
               asChild
-              className="bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
-                         hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
+              className="bg-cyan-400 text-black font-medium rounded-lg px-6 py-2.5
+                         hover:bg-cyan-300 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <Link href="#contact">Chat With Us</Link>
+              <Link href="#contact">Try Now</Link>
             </Button>
           </div>
 
@@ -76,13 +69,13 @@ export function SiteHeader() {
                 {/* Brand Header */}
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
                   <Image
-                    src="/icons/skitbit-white.svg"
-                    alt="Skitbit logo"
+                    src="/icons/GovLink-white.svg"
+                    alt="GovLink logo"
                     width={24}
                     height={24}
                     className="h-6 w-6"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">Skitbit</span>
+                  <span className="font-semibold tracking-wide text-white text-lg">GovLink</span>
                 </div>
 
                 {/* Nav Links */}
@@ -105,8 +98,8 @@ export function SiteHeader() {
                 <div className="mt-auto border-t border-gray-800 p-4">
                   <Button
                     asChild
-                    className="w-full bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
-                               hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
+                    className="w-full bg-cyan-400 text-black font-medium rounded-lg px-6 py-2.5
+                               hover:bg-cyan-300 hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
                     <Link href="https://wa.link/65mf3i">Get a Quote</Link>
@@ -118,5 +111,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

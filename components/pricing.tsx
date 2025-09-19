@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { CheckCircle2 } from "lucide-react"
-import { ExamplesDialog } from "./examples-dialog"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { CheckCircle2 } from "lucide-react";
+import { ExamplesDialog } from "./examples-dialog";
 
-type Feature = { text: string; muted?: boolean }
+type Feature = { text: string; muted?: boolean };
 
-const ACCENT = "#C6FF3A"
+const ACCENT = "#53eafd";
 
 function FeatureItem({ text, muted = false }: Feature) {
   return (
@@ -17,10 +17,10 @@ function FeatureItem({ text, muted = false }: Feature) {
       <CheckCircle2 className="mt-0.5 h-4 w-4" style={{ color: ACCENT }} />
       <span className={`text-sm ${muted ? "text-neutral-500" : "text-neutral-200"}`}>{text}</span>
     </li>
-  )
+  );
 }
 
-type Currency = "INR" | "USD"
+type Currency = "INR" | "USD";
 
 const PRICES: Record<Currency, { startup: string; pro: string; premium: string; save: string }> = {
   INR: {
@@ -35,13 +35,13 @@ const PRICES: Record<Currency, { startup: string; pro: string; premium: string; 
     premium: "$2,049",
     save: "Save $20",
   },
-}
+};
 
 function guessLocalCurrency(): Currency {
-  const lang = typeof navigator !== "undefined" ? navigator.language : ""
-  const tz = typeof Intl !== "undefined" ? Intl.DateTimeFormat().resolvedOptions().timeZone : ""
-  if (/-(IN|PK|BD)\b/i.test(lang) || /(Kolkata|Karachi|Dhaka)/i.test(tz || "")) return "INR"
-  return "USD"
+  const lang = typeof navigator !== "undefined" ? navigator.language : "";
+  const tz = typeof Intl !== "undefined" ? Intl.DateTimeFormat().resolvedOptions().timeZone : "";
+  if (/-(IN|PK|BD)\b/i.test(lang) || /(Kolkata|Karachi|Dhaka)/i.test(tz || "")) return "INR";
+  return "USD";
 }
 
 // Startup demo videos
@@ -55,7 +55,7 @@ const startupVideos = [
   "3JZ_D3ELwOQ",
   "e-ORhEE9VVg",
   "fJ9rUzIMcZQ",
-]
+];
 
 // Pro demo videos
 const proVideos = [
@@ -68,7 +68,7 @@ const proVideos = [
   "5Xq7UdXXOxI",
   "kMjWCidQSK0",
   "RKKdQvwKOhQ",
-]
+];
 
 // Premium demo videos
 const premiumVideos = [
@@ -81,32 +81,37 @@ const premiumVideos = [
   "hTWKbfoikeg",
   "YQHsXMglC9A",
   "09R8_2nJtjg",
-]
+];
 
 export function Pricing() {
-  const [openPlan, setOpenPlan] = useState<null | "Startup" | "Pro" | "Premium">(null)
-  const [currency, setCurrency] = useState<Currency>("USD")
+  const [openPlan, setOpenPlan] = useState<null | "Startup" | "Pro" | "Premium">(null);
+  const [currency, setCurrency] = useState<Currency>("USD");
 
   useEffect(() => {
-    let cancelled = false
+    let cancelled = false;
     async function load() {
       try {
-        const res = await fetch("/api/geo", { cache: "no-store" })
-        if (!res.ok) throw new Error("geo failed")
-        const data = await res.json()
-        if (!cancelled) setCurrency(data?.currency === "INR" ? "INR" : "USD")
+        const res = await fetch("/api/geo", { cache: "no-store" });
+        if (!res.ok) throw new Error("geo failed");
+        const data = await res.json();
+        if (!cancelled) setCurrency(data?.currency === "INR" ? "INR" : "USD");
       } catch {
-        if (!cancelled) setCurrency(guessLocalCurrency())
+        if (!cancelled) setCurrency(guessLocalCurrency());
       }
     }
-    load()
+    load();
     return () => {
-      cancelled = true
-    }
-  }, [])
+      cancelled = true;
+    };
+  }, []);
 
   return (
-    <section id="pricing" className="text-white" itemScope itemType="https://schema.org/PriceSpecification">
+    <section
+      id="pricing"
+      className="text-white"
+      itemScope
+      itemType="https://schema.org/PriceSpecification"
+    >
       <div className="container mx-auto px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <div
@@ -345,5 +350,5 @@ export function Pricing() {
         videoIds={premiumVideos}
       />
     </section>
-  )
+  );
 }

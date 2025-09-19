@@ -1,23 +1,33 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
-import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import Image from "next/image";
 
 export function LogoMarquee() {
-  const [pausedRow, setPausedRow] = useState<string | null>(null)
+  const [pausedRow, setPausedRow] = useState<string | null>(null);
 
   // Logo data with colors and content
   const logos = [
     { name: "Intel", content: "intel", color: "text-neutral-300" },
     { name: "MongoDB", content: "🟢", color: "text-green-500" },
-    { name: "Skitbit", content: "image", color: "text-neutral-300", image: "/images/skitbit-subtle-logo.png" },
+    {
+      name: "Skitbit",
+      content: "image",
+      color: "text-neutral-300",
+      image: "/images/skitbit-subtle-logo.png",
+    },
     { name: "VK", content: "VK", color: "text-white", bg: "bg-blue-500" },
     { name: "TechCrunch", content: "TC", color: "text-neutral-300" },
     { name: "MailChimp", content: "🐵", color: "text-yellow-500" },
-    { name: "ESJ", content: "image", color: "text-neutral-300", image: "/images/esj-subtle-logo.png" },
+    {
+      name: "ESJ",
+      content: "image",
+      color: "text-neutral-300",
+      image: "/images/esj-subtle-logo.png",
+    },
     { name: "Kickstarter", content: "K", color: "text-white", bg: "bg-green-500" },
-  ]
+  ];
 
   const secondRowLogos = [
     { name: "StumbleUpon", content: "🔴", color: "text-red-500" },
@@ -28,7 +38,7 @@ export function LogoMarquee() {
     { name: "Apple", content: "🍎", color: "text-neutral-300" },
     { name: "TransferWise", content: "✓", color: "text-white", bg: "bg-green-500" },
     { name: "Medium", content: "M", color: "text-neutral-300" },
-  ]
+  ];
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
     <div
@@ -48,15 +58,19 @@ export function LogoMarquee() {
             />
           </div>
         ) : logo.bg ? (
-          <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${logo.bg} flex items-center justify-center`}>
+          <div
+            className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${logo.bg} flex items-center justify-center`}
+          >
             <span className={`text-sm sm:text-lg font-bold ${logo.color}`}>{logo.content}</span>
           </div>
         ) : (
-          <span className={`text-lg sm:text-xl lg:text-2xl font-semibold ${logo.color}`}>{logo.content}</span>
+          <span className={`text-lg sm:text-xl lg:text-2xl font-semibold ${logo.color}`}>
+            {logo.content}
+          </span>
         )}
       </div>
     </div>
-  )
+  );
 
   return (
     <section className="text-white py-16 sm:py-20 overflow-hidden">
@@ -64,11 +78,14 @@ export function LogoMarquee() {
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
-            Meet our <span className="text-lime-300">top-tier</span>
+            Meet our <span className="text-cyan-300">top-tier</span>
             <br />
             customers
           </h2>
-          <Button variant="outline" className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced bg-transparent">
+          <Button
+            variant="outline"
+            className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced bg-transparent"
+          >
             Learn More
           </Button>
         </div>
@@ -78,7 +95,9 @@ export function LogoMarquee() {
           {/* First Row - Scrolling Right */}
           <div className="flex overflow-hidden mb-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div
-              className={`flex animate-scroll-right whitespace-nowrap ${pausedRow === "first" ? "animation-play-state-paused" : ""}`}
+              className={`flex animate-scroll-right whitespace-nowrap ${
+                pausedRow === "first" ? "animation-play-state-paused" : ""
+              }`}
               style={{
                 animationPlayState: pausedRow === "first" ? "paused" : "running",
                 width: "max-content",
@@ -94,7 +113,9 @@ export function LogoMarquee() {
           {/* Second Row - Scrolling Left */}
           <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div
-              className={`flex animate-scroll-left whitespace-nowrap ${pausedRow === "second" ? "animation-play-state-paused" : ""}`}
+              className={`flex animate-scroll-left whitespace-nowrap ${
+                pausedRow === "second" ? "animation-play-state-paused" : ""
+              }`}
               style={{
                 animationPlayState: pausedRow === "second" ? "paused" : "running",
                 width: "max-content",
@@ -109,5 +130,5 @@ export function LogoMarquee() {
         </div>
       </div>
     </section>
-  )
+  );
 }

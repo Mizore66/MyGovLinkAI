@@ -1,24 +1,20 @@
-import type React from "react"
-import "./globals.css"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import Script from "next/script"
-import Plasma from "@/components/plasma"
+import type React from "react";
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import Plasma from "@/components/plasma";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+  title: "GovLink | Your AI Helper in Government Services",
   description:
-    "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
+    "GovLink is your AI-powered assistant for navigating government services effortlessly from your phone.",
   generator: "v0.app",
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
@@ -37,7 +33,7 @@ export default function RootLayout({
           {`
             function updateFavicon() {
               const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const faviconHref = darkMode ? '/icons/skitbit-white.svg' : '/icons/favicon-dark.svg';
+              const faviconHref = darkMode ? '/icons/govlink-logo.png' : '/icons/govlink-logo.png';
               let link = document.querySelector("link[rel~='icon']");
               if (!link) {
                 link = document.createElement('link');
@@ -62,7 +58,10 @@ export default function RootLayout({
         </Script>
 
         {/* Google Analytics (deferred) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W6LV22900R" strategy="lazyOnload" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W6LV22900R"
+          strategy="lazyOnload"
+        />
         <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -75,8 +74,9 @@ export default function RootLayout({
       <body>
         <div className="fixed inset-0 z-0 bg-black">
           <Plasma
-            color="#8b5cf6"
-            speed={0.8}
+            // color="#bf2427"
+            color="#e07879"
+            speed={0.4}
             direction="forward"
             scale={1.5}
             opacity={0.4}
@@ -86,5 +86,5 @@ export default function RootLayout({
         <div className="relative z-10">{children}</div>
       </body>
     </html>
-  )
+  );
 }
