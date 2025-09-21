@@ -3,6 +3,9 @@
 # Demo Video
 https://youtu.be/8qvh84r3TJU
 
+# Pitch Deck
+https://www.canva.com/design/DAGzgCsewL8/Ajj708lt7z4qhT_p0K4YhA/edit?utm_content=DAGzgCsewL8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## Team ARMVD
 Anas <br>
 Rawad <br>
