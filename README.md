@@ -28,8 +28,17 @@ providing a single, seamless experience for the user.
 
 ## Scalabilty of Solution
 
-The client-facing side of our product leverages on 3rd party apps like Discord and Telegram which has millions of users, so our product is able to handle many potential users. Furthermore, the product is highly scalable because it is built on a combination of serverless and managed AWS services alongside containerized workloads. AWS Bedrock provides elastic scaling for natural language processing, ensuring that the system can handle fluctuating volumes of citizen queries without manual infrastructure management. In adition, AWS ECS and EC2 provide a controlled compute layer for workloads that require persistent connections, specialized runtimes, or more predictable scaling. ECS enables containerized services to scale horizontally by running more tasks as demand increases, while EC2 Auto Scaling Groups allow compute resources to grow or shrink dynamically to match traffic patterns. This hybrid design ensures flexibility, as serverless services absorb unpredictable spikes while ECS/EC2 deliver stable scaling for long-running or stateful services. 
+The client-facing side of our product leverages on 3rd party apps like Discord and Telegram which has millions of users, so our product is able to handle many potential users. Furthermore, AWS Bedrock provides elastic scaling for natural language processing, ensuring that the system can handle fluctuating volumes of citizen queries without manual infrastructure management. In adition, AWS ECS and EC2 provide a controlled compute layer for workloads that require persistent connections, specialized runtimes, or more predictable scaling. ECS enables containerized services to scale horizontally by running more tasks as demand increases, while EC2 Auto Scaling Groups allow compute resources to grow or shrink dynamically to match traffic patterns. This hybrid design ensures flexibility, as ECS/EC2 deliver stable scaling for long-running or stateful services. 
 
 ## Future Plans
 
 In the future, we can transform the current monolithic MCP server into a set of microservices. By decomposing the monolithic system into smaller, domain-specific services—for example, separate services for license renewals, summons payments, authentication, and notifications—we can reduce bottlenecks and scale individual components independently based on demand. These microservices can then be orchestrated using Kubernetes, hosted within Amazon EKS, which provides automated scaling, self-healing, and rolling updates.  
+
+## External Repos
+
+Discord Bot and Telegram Bot were developed in other repositories. Here are their links: <br>
+
+Discord Bot: https://github.com/vinmeil/govlink-bot <br>
+Telegram Bot: https://github.com/rawaddddd/MyGovLinkAITelegramBot <br>
+Landing Page: Here <br>
+MCP Client and Server: Here <br>
