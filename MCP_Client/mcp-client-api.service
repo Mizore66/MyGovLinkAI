@@ -1,0 +1,21 @@
+[Unit]
+Description=MCP Client API Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/mcp-client
+Environment=PATH=/home/ubuntu/mcp-client/venv/bin
+Environment=MCP_SERVER_URL=http://localhost:8000
+ExecStart=/home/ubuntu/mcp-client/venv/bin/python api_server.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mcp-client-api
+
+[Install]
+WantedBy=multi-user.target

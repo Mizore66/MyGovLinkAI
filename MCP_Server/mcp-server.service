@@ -1,0 +1,27 @@
+[Unit]
+Description=MCP Server - GovLink
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/mcp-server
+Environment=PATH=/opt/mcp-server/venv/bin
+ExecStart=/opt/mcp-server/venv/bin/python mcp_server.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mcp-server
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/mcp-server /var/log/mcp-server
+
+[Install]
+WantedBy=multi-user.target
