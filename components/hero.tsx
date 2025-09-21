@@ -1,15 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { FaDiscord, FaTelegramPlane } from "react-icons/fa";
 
 export function Hero() {
-  const buttonNew = (
-    <Button asChild className="rounded-full bg-cyan-400 px-6 text-black hover:bg-cyan-300">
-      <a href="https://wa.me/601172470181" target="_blank" rel="noopener noreferrer">
-        Try Now
-      </a>
-    </Button>
-  );
-
   return (
     <section className="relative isolate overflow-hidden mt-20">
       <div className="container mx-auto px-4">
@@ -36,18 +29,36 @@ export function Hero() {
                 WITH AI
               </span>
             </h1>
-            <div className="mt-6 flex justify-end">{buttonNew}</div>
+            <div className="mt-6 flex flex-col items-end gap-3">
+              <p className="text-md font-extrabold text-white">Try It Now On</p>
+              <div className="flex gap-3">
+                <Button asChild className="rounded-full bg-[#5865F2] text-white hover:bg-[#4752C4]">
+                  <a
+                    href="https://discord.com/oauth2/authorize?client_id=1418806394634633254"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaDiscord className="inline" size={20} />
+                    <span className="font-bold tracking-wide">Discord</span>
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  className="rounded-full bg-[#0088cc] px-6 text-white hover:bg-[#006699]"
+                >
+                  <a href="https://t.me/MyGovLinkBot" target="_blank" rel="noopener noreferrer">
+                    <FaTelegramPlane className="inline" size={20} />
+                    <span className="font-bold tracking-wide">Telegram</span>
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
 
           {/* Right side - Phone */}
           <div className="flex-shrink-0">
             <div className="w-64">
-              <PhoneCard
-                title={phoneData[0].title}
-                sub={phoneData[0].sub}
-                tone={phoneData[0].tone}
-                gradient={phoneData[0].gradient}
-              />
+              <PhoneCard title={""} sub={""} tone={""} gradient={phoneData[0].gradient} />
             </div>
           </div>
         </div>
@@ -61,18 +72,16 @@ function PhoneCard({
   sub = "Clear night. Great for render farm runs.",
   tone = "calm",
   gradient = "from-[#0f172a] via-[#14532d] to-[#052e16]",
-  videoSrc,
 }: {
   title?: string;
   sub?: string;
   tone?: string;
   gradient?: string;
-  videoSrc?: string;
 }) {
   return (
     <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
-        <Image src="/images/top-rated-1.png" alt="placeholder" fill className="object-cover" />
+        <Image src="/images/discord-light.png" alt="placeholder" fill className="object-cover" />
 
         <div className="relative z-10 p-3">
           <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
@@ -91,9 +100,6 @@ function PhoneCard({
 
 const phoneData = [
   {
-    title: "Pay Taxes",
-    sub: "Handle tax payments instantly via WhatsApp.",
-    tone: "taxes",
     gradient: "from-[#0b0b0b] via-[#0f172a] to-[#020617]",
   },
 ];

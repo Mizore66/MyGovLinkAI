@@ -38,20 +38,6 @@ export function AppverseFooter() {
 
   return (
     <section className="text-white">
-      {/* Contact CTA */}
-      {/* <div className="container mx-auto px-4 pt-12 sm:pt-16">
-        <div className="flex justify-center">
-          <Button
-            asChild
-            className="rounded-full bg-cyan-400 px-6 py-2 text-sm font-medium text-black shadow-[0_0_20px_rgba(163,230,53,0.35)] hover:bg-cyan-300"
-          >
-            <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
-              Contact us
-            </a>
-          </Button>
-        </div>
-      </div> */}
-
       {/* Download the app */}
       <div className="container mx-auto px-4 py-12 sm:py-16 space-y-8">
         {/* First Card - Phone on left, text on right */}
@@ -62,37 +48,24 @@ export function AppverseFooter() {
               <div className="relative rounded-[28px] liquid-glass p-2 shadow-2xl">
                 <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
                   <Image
-                    src="/images/top-rated-1.png"
+                    src="/images/discord-light-2.jpg"
                     alt="placeholder"
                     fill
                     className="object-cover"
                   />
-                  <div className="relative p-3">
-                    <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
-                    <div className="space-y-1 px-1">
-                      <div className="text-3xl font-extrabold text-cyan-300">Tax History</div>
-                      <p className="text-xs text-white/80">
-                        View past tax payments instantly via WhatsApp
-                      </p>
-                      <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-300">
-                        govlink app
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right copy */}
             <div>
-              <p className="mb-2 text-[11px] tracking-widest text-cyan-300">TAX PAYMENT HISTORY</p>
+              <p className="mb-2 text-[11px] tracking-widest text-cyan-300">TAX INVOICES</p>
               <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Access your complete tax payment records instantly
+                Access your tax invoices instantly
               </h3>
               <p className="mt-2 max-w-prose text-sm text-neutral-400">
-                View your entire tax payment history, download receipts, and check compliance
-                status. Our AI will guide you to the official tax portal when needed for detailed
-                records or corrections.
+                View all your tax invoices and check compliance status. Our AI will guide you to the
+                official tax portal when needed for detailed records or corrections.
               </p>
             </div>
           </div>
@@ -118,21 +91,11 @@ export function AppverseFooter() {
               <div className="relative rounded-[28px] liquid-glass p-2 shadow-2xl">
                 <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
                   <Image
-                    src="/images/top-rated-1.png"
+                    src="/images/discord-light-3.jpg"
                     alt="placeholder"
                     fill
                     className="object-cover"
                   />
-                  <div className="relative p-3">
-                    <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
-                    <div className="space-y-1 px-1">
-                      <div className="text-3xl font-extrabold text-cyan-300">Court Summons</div>
-                      <p className="text-xs text-white/80">Check legal notices and summons</p>
-                      <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-300">
-                        govlink app
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -147,21 +110,11 @@ export function AppverseFooter() {
               <div className="relative rounded-[28px] liquid-glass p-2 shadow-2xl">
                 <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
                   <Image
-                    src="/images/top-rated-1.png"
+                    src="/images/discord-light-4.jpg"
                     alt="placeholder"
                     fill
                     className="object-cover"
                   />
-                  <div className="relative p-3">
-                    <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
-                    <div className="space-y-1 px-1">
-                      <div className="text-3xl font-extrabold text-cyan-300">License Expiry</div>
-                      <p className="text-xs text-white/80">Check all license expiration dates</p>
-                      <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-300">
-                        govlink app
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -210,15 +163,13 @@ export function AppverseFooter() {
                   Navigation
                 </h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  {["Home", "Features", "Testimonials", "Pricing", "Blog", "Download"].map(
-                    (item) => (
-                      <li key={item}>
-                        <Link href={`#${item.toLowerCase()}`} className="hover:text-cyan-300">
-                          {item}
-                        </Link>
-                      </li>
-                    )
-                  )}
+                  {["Home", "Features", "Try Now"].map((item) => (
+                    <li key={item}>
+                      <Link href={`#${item.toLowerCase()}`} className="hover:text-cyan-300">
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div>
@@ -229,9 +180,7 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Twitter className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://twitter.com/theGovLink"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#"
                       className="hover:text-cyan-300"
                       aria-label="Follow GovLink on Twitter"
                     >
@@ -241,9 +190,7 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Youtube className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://www.youtube.com/@GovLinkinternational"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#"
                       className="hover:text-cyan-300"
                       aria-label="Subscribe to GovLink on YouTube"
                     >
@@ -253,9 +200,7 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Instagram className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://instagram.com/theGovLink"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#"
                       className="hover:text-cyan-300"
                       aria-label="Follow GovLink on Instagram"
                     >
@@ -265,9 +210,7 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <MessageCircle className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://threads.com/theGovLink"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#"
                       className="hover:text-cyan-300"
                       aria-label="Follow GovLink on Threads"
                     >

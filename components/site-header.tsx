@@ -45,9 +45,7 @@ export function SiteHeader() {
                          hover:bg-cyan-300 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <a href="https://wa.me/601172470181" target="_blank" rel="noopener noreferrer">
-                Try Now
-              </a>
+              <a href="#">Try Now</a>
             </Button>
           </div>
 
