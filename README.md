@@ -23,8 +23,9 @@ providing a single, seamless experience for the user.
 ---
 
 ## System Architecture
+![System Architecture (Detailed)](https://github.com/user-attachments/assets/32880479-d391-4e50-9e13-0421ab5b6a0e)
 
-![System Architecture](assets/govlinkai_system_architecture.png)
+![System Architecture (Simplified](assets/govlinkai_system_architecture.png)
 
 ## Scalabilty of Solution
 
