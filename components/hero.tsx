@@ -12,7 +12,7 @@ export function Hero() {
             <div className="mb-5 flex items-center justify-end gap-2">
               <Image
                 src="/icons/govlink-logo.png"
-                alt="Skitbit logo"
+                alt="govlink logo"
                 width={32}
                 height={32}
                 className="h-8 w-8"
