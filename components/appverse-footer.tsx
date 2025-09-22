@@ -14,7 +14,7 @@ interface FooterContent {
 
 const defaultContent: FooterContent = {
   tagline:
-    "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
+    "All your government services in one place, powered by AI. Simplifying bureaucracy for you.",
   copyright: "© 2025 — GovLink",
 };
 
